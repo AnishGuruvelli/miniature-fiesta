@@ -1,5 +1,7 @@
 /// https://www.youtube.com/watch?v=wjqSZy4pMT4&list=PLDzeHZWIZsTq8KwpV5ipe5-ncApOTEL9k&index=2
 
+// https://www.youtube.com/watch?v=bLGZhJlt4y0
+
 
 #include <bits/stdc++.h>
 
