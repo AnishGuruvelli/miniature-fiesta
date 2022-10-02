@@ -21,6 +21,7 @@ public:
             findCombination(index, target - arr[index], arr, ans, ds);
             ds.pop_back();
         }
+        // dont pick up the element
         findCombination(index + 1, target, arr, ans, ds);
     }
 
