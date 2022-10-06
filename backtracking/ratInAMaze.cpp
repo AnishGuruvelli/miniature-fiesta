@@ -2,7 +2,6 @@
 
 // https://www.youtube.com/watch?v=bLGZhJlt4y0
 
-
 #include <bits/stdc++.h>
 
 bool isSafe(int newx, int newy, vector<vector<bool>> &vis, vector<vector<int>> &arr, int n)
