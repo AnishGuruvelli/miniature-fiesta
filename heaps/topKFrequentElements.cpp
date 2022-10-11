@@ -31,3 +31,7 @@ public:
         return result;
     }
 };
+
+// https://www.geeksforgeeks.org/find-k-numbers-occurrences-given-array/
+
+// https://github.com/neetcode-gh/leetcode/blob/main/cpp/neetcode_150/01_arrays_%26_hashing/top_k_frequent_elements.cpp

@@ -20,4 +20,4 @@ public:
         else
             return false;
     }
-};
+};  
