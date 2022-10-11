@@ -5,7 +5,7 @@ public:
     {
         unordered_map<int, int> mp;
         vector<int> ans;
-        for (int i = 0; i < nums.size(); i++)
+        for (int i = 0; i < nums.size(); i++)       
         {
             int complement = target - nums[i];
             if (mp.find(complement) != mp.end())

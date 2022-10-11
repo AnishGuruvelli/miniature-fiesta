@@ -3,19 +3,36 @@ class Solution
 public:
     bool isAnagram(string s, string t)
     {
-        int n1 = s.size();
-        int n2 = t.size();
+        unordered_map<char, int> mp1;
+        unordered_map<char, int> mp2;
 
-        if (n1 != n2)
-        {
+        if (s.size() != t.size())
             return false;
-        }
-        sort(s.begin(), s.end());
-        sort(t.begin(), t.end());
-        if (s == t)
+
+        for (int i = 0; i < s.size(); i++)
         {
-            return true;
+            mp1[t[i]]++;
+            mp2[s[i]]++;
         }
-        return false;
+
+        if (mp1 == mp2)
+            return true;
+        else
+            return false;
+
+        //         int n1 = s.size();
+        //         int n2 = t.size();
+
+        //         if (n1 != n2)
+        //         {
+        //             return false;
+        //         }
+        //         sort(s.begin(), s.end());
+        //         sort(t.begin(), t.end());
+        //         if (s == t)
+        //         {
+        //             return true;
+        //         }
+        //         return false;
     }
 };
