@@ -3,7 +3,7 @@ class Solution
 public:
     int majorityElement(vector<int> &nums)
     {
-        Int n = nums.size();
+        int n = nums.size();
 
         // OR SORTING
         // sort(nums.begin(), nums.end());
