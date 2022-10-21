@@ -15,6 +15,7 @@ public:
             {
                 if (s.empty())
                     return false;
+                    
                 else if (a[i] == ')')
                 {
                     if (s.top() == '(')

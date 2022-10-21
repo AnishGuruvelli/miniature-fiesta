@@ -5,6 +5,7 @@ public:
     {
         int n = nums.size();
         int j = 0;
+
         for (int i = 0; i < n; i++)
         {
             if (nums[i] != 0)
@@ -13,7 +14,7 @@ public:
                 j++;
             }
         }
-        while (j < nums.size())
+        while (j < n)
         {
             nums[j] = 0;
             j++;
