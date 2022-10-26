@@ -6,12 +6,13 @@ public:
     int lengthOfLongestSubstring(string s)
     {
         if (s.length() == 0)
-            return 0;               // if string of length zero comes simply return 0
-        unordered_map<char, int> m; // create map to store frequency,(get to know all unique characters
+            return 0;
+        unordered_map<char, int> m;
         int i = 0, j = 0, ans = INT_MIN;
         while (j < s.length())
         {
-            m[s[j]]++;                 // increase the frequency of the element as you traverse the string
+            m[s[j]]++;
+            // increase the frequency of the element as you traverse the string
             if (m.size() == j - i + 1) // whem map size is equal to the window size means suppose window size is 3 and map size is also three that means in map all unique characters are their
             {
                 ans = max(ans, j - i + 1); // compare the length of the maximum window size
