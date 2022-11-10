@@ -1,6 +1,8 @@
 // https://www.geeksforgeeks.org/check-whether-the-given-string-is-palindrome-using-stack/
 // using stacks
 
+// https://leetcode.com/problems/valid-palindrome/description/
+
 class Solution
 {
 public:

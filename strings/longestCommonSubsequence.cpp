@@ -81,7 +81,6 @@ int lcs(string str1, string str2)
 
 /// leetcode : https://leetcode.com/problems/longest-common-subsequence/description/
 
-
 class Solution
 {
 public:
@@ -111,25 +110,30 @@ public:
 
 /// BRUTE FORCE APPROACH
 
-// class Solution {
-// public:
+class Solution
+{
+public:
+    int helper(string s1, string s2, int m, int n)
+    {
 
-//     int helper(string s1, string s2, int m, int n){
+        if (m == 0 || n == 0)
+            return 0;
 
-//         if(m==0 || n==0) return 0;
+        if (s1[m - 1] == s2[n - 1])
+        {
+            return 1 + helper(s1, s2, m - 1, n - 1);
+        }
+        else
+        {
+            return max(helper(s1, s2, m - 1, n), helper(s1, s2, m, n - 1));
+        }
+    }
 
-//         if(s1[m-1] == s2[n-1]){
-//             return 1 + helper(s1, s2, m-1, n-1);
-//         }
-//         else{
-//             return max(helper(s1, s2, m-1, n), helper(s1, s2, m, n-1));
-//         }
-//     }
-
-//     int longestCommonSubsequence(string text1, string text2) {
-//         int m = text1.size();
-//         int n = text2.size();
-//         int ans = helper(text1, text2, m, n);
-//         return ans;
-//     }
-// };
+    int longestCommonSubsequence(string text1, string text2)
+    {
+        int m = text1.size();
+        int n = text2.size();
+        int ans = helper(text1, text2, m, n);
+        return ans;
+    }
+};
