@@ -8,6 +8,7 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
 class Solution
 {
 public:
@@ -39,3 +40,5 @@ public:
         return dummy->next;
     }
 };
+
+// carry = sum / 10;  ListNode *node = new ListNode(sum % 10);

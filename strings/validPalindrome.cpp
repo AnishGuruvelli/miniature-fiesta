@@ -38,6 +38,8 @@ public:
     }
 };
 
+// if (!((s[l] >= 'a' && s[l] <= 'z') || (s[l] >= '0' && s[l] <= '9')))
+
 /*
 
 bool isPalindrome(string s)
