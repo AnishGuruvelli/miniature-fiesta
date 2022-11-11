@@ -19,15 +19,22 @@ public:
         if (list2 == NULL)
             return list1;
 
-        if (list1->val <= list2->val)
+        if (list1->val < list2->val)
         {
-            list1->next = mergeTwoLists(list1->next, list2);
-            return list1;
+            swap(list1, list2);
         }
-        else
+
+        ListNode *res = list1;
+        while (l1 != NULL && l2 != NULL)
         {
-            list2->next = mergeTwoLists(list2->next, list1);
-            return list2;
+            while (list1 != NULL && list1->val <= list2->val)
+            {
+                temp = list1;
+                list1 = list1->next;
+            }
+            temp->next = list2;
+            swap(list1, list2);
         }
+        return res;
     }
 };
