@@ -1,5 +1,9 @@
 int to string: 
 string s = to_string(i);
+string to something else:
+long n1 = stol(num1);
+int n2 = stoi(num2);
+
 
 
 A Min-Heap uses the ascending priority.	A Max-Heap uses the descending priority.
