@@ -60,9 +60,7 @@ public:
         inorder(root);
         int j;
         for (int i = 1; i < k; ++i)
-        {
             p.pop();
-        }
         return p.top();
     }
 };
