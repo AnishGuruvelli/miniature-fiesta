@@ -18,9 +18,7 @@ public:
             if (mp[s[i]] < mp[s[i + 1]])
                 sum -= mp[s[i]];
             else
-            {
                 sum += mp[s[i]];
-            }
         }
         return sum;
     }
