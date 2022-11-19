@@ -6,7 +6,7 @@ public:
     void helper(int open, int close, int n, string current)
     {
         // 2*n = total : base case
-        
+
         if (current.size() == 2 * n)
         {
             ans.push_back(current);
