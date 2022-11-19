@@ -21,11 +21,11 @@ class Solution
 public:
     int findKthLargest(vector<int> &nums, int k)
     {
-        // for maxHeap this is the format: for smallest element:
+        // for maxHeap this is the format:
         // arranges in descending order
         // priority_queue<int> pq;
 
-        // for minHeap below is the format: for largest element:
+        // for minHeap below is the format:
         // arranges in ascending order
         priority_queue<int, vector<int>, greater<int>> pq;
 

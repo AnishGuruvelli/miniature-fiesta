@@ -7,7 +7,7 @@ int n2 = stoi(num2);
 
 
 A Min-Heap uses the ascending priority.	A Max-Heap uses the descending priority.
-max heap:
+max heap: 30 20 10 0
 priority_queue<int> pq;
 min heap:
 priority_queue<int, vector<int>, greater<int>> pq;
