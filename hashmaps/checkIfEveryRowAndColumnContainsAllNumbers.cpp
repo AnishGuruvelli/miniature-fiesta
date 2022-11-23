@@ -16,13 +16,9 @@ public:
             for (int j = 0; j < n; j++)
             {
                 if (m.count(matrix[i][j]))
-                {
                     return false;
-                }
                 else
-                {
                     m[matrix[i][j]]++;
-                }
             }
             m.clear();
         }
@@ -31,13 +27,9 @@ public:
             for (int j = 0; j < n; j++)
             {
                 if (m.count(matrix[j][i]))
-                {
                     return false;
-                }
                 else
-                {
                     m[matrix[j][i]]++;
-                }
             }
             m.clear();
         }
