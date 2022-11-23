@@ -3,15 +3,15 @@ class Solution
 public:
     bool isValid(vector<vector<char>> &board, int row, int col, int c)
     {
-        for (int i = 0; i < 9; i++)
+        for (int k = 0; k < 9; k++)
         {
-            if (board[row][i] == c)
+            if (board[row][k] == c)
                 return false;
-            if (board[i][col] == c)
+            if (board[k][col] == c)
                 return false;
 
             /// at 24:17: https://www.youtube.com/watch?v=FWAIf_EVUKE
-            if (board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] == c)
+            if (board[3 * (row / 3) + k / 3][3 * (col / 3) + k % 3] == c)
                 return false;
         }
         return true;
