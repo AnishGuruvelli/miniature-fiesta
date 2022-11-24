@@ -31,31 +31,31 @@ public:
  */
 
 // BAD SOLUTION: VERY TIME AND SPACE INEFFICIENT
-class Solution
-{
-public:
-    bool isPalindrome(ListNode *head)
-    {
-        vector<int> ans1;
-        vector<int> ans;
-        while (head != NULL)
-        {
-            ans.push_back(head->val);
-            ans1.push_back(head->val);
-            head = head->next;
-        }
+// class Solution
+// {
+// public:
+//     bool isPalindrome(ListNode *head)
+//     {
+//         vector<int> ans1;
+//         vector<int> ans;
+//         while (head != NULL)
+//         {
+//             ans.push_back(head->val);
+//             ans1.push_back(head->val);
+//             head = head->next;
+//         }
 
-        for (auto i : ans)
-        {
-            cout << i;
-        }
-        int n = ans.size();
+//         for (auto i : ans)
+//         {
+//             cout << i;
+//         }
+//         int n = ans.size();
 
-        reverse(ans1.begin(), ans1.end());
+//         reverse(ans1.begin(), ans1.end());
 
-        if (ans == ans1)
-            return true;
+//         if (ans == ans1)
+//             return true;
 
-        return false;
-    }
-};
+//         return false;
+//     }
+// };
