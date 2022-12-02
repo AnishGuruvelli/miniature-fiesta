@@ -5,6 +5,7 @@ public:
     {
         int rows = matrix.size();
         int cols = matrix[0].size();
+        int xyz = INT_MAX-1;
 
         for (int i = 0; i < rows; i++)
         {
@@ -17,7 +18,7 @@ public:
                     {
                         if (matrix[ind][j] != 0)
                         {
-                            matrix[ind][j] = -1;
+                            matrix[ind][j] = xyz;
                         }
                         ind--;
                     }
@@ -26,7 +27,7 @@ public:
                     {
                         if (matrix[ind][j] != 0)
                         {
-                            matrix[ind][j] = -1;
+                            matrix[ind][j] = xyz;
                         }
                         ind++;
                     }
@@ -35,7 +36,7 @@ public:
                     {
                         if (matrix[i][ind] != 0)
                         {
-                            matrix[i][ind] = -1;
+                            matrix[i][ind] = xyz;
                         }
                         ind--;
                     }
@@ -44,7 +45,7 @@ public:
                     {
                         if (matrix[i][ind] != 0)
                         {
-                            matrix[i][ind] = -1;
+                            matrix[i][ind] = xyz;
                         }
                         ind++;
                     }
@@ -55,7 +56,7 @@ public:
         {
             for (int j = 0; j < cols; j++)
             {
-                if (matrix[i][j] == 0 || matrix[i][j] == -1)
+                if (matrix[i][j] == 0 || matrix[i][j] == xyz)
                 {
                     matrix[i][j] = 0;
                 }
