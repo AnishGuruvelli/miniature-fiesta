@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/determine-if-two-strings-are-close/solutions/935920/c-short-and-simple-o-n-solution/
+// imp question
 
 class Solution
 {
@@ -17,9 +18,11 @@ public:
             w2[c - 'a']++;
             s2.insert(c);
         }
-        sort(begin(w1), end(w1));
+        // sort(begin(w1), end(w1));
+        sort(w1.begin(), w1.end());
         sort(begin(w2), end(w2));
         return w1 == w2 && s1 == s2;
+        // returns true if the size of both the sets are equal and both contain the same elements
     }
 };
 
@@ -35,7 +38,7 @@ Frequency in string1 :                         Frequency in string2 :
 see in String 1 count array ->   1, 1, 1, 2, 4 =>sorted order
 and in String 2 count array ->   1, 1, 1, 2, 4 =>sorted order
 
-Unique all char   a,b,c,z,p  in string 1 is there as well in string2 so it's a valid One just return True
+Unique all char   a,b,c,z,p  in string 1 is there as well as in string2 so it's a valid one, just return True
 */
 
 // One Improvemnt :

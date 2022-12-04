@@ -1,6 +1,8 @@
 // very imp question, we have to find out the last index of every char in a string 
 // https://leetcode.com/problems/partition-labels/description/
 
+// imp question
+111
 class Solution
 {
 public:
