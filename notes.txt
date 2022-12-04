@@ -4,6 +4,10 @@ string to something else:
 long n1 = stol(num1);
 int n2 = stoi(num2);
 
+to lowercase:
+s[i] = tolower(s[i]);
+
+
 
 
 A Min-Heap uses the ascending priority.	A Max-Heap uses the descending priority.
