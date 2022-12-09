@@ -1,3 +1,7 @@
+Q. how to run the code:
+        g++ sena.cpp -o sena
+        ./sena
+
 int to string: 
 string s = to_string(i);
 string to something else:
