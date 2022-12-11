@@ -31,17 +31,16 @@ public:
 
         // unordered_map
 
-            int ans = 0;
+        int ans = 0;
         unordered_map<int, int> mp;
+
         for (auto i : nums)
-        {
             mp[i]++;
-        }
+
         for (auto it : mp)
-        {
             if (it.second > 1)
                 ans = it.first;
-        }
+
         return ans;
     }
 };
