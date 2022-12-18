@@ -3,10 +3,12 @@ class Solution
 public:
     vector<int> dailyTemperatures(vector<int> &t)
     {
-
         int n = t.size();
+
         vector<int> ans(n, 0);
+        
         stack<int> st;
+        
         for (int i = 0; i < n; i++)
         {
             while (!st.empty() && t[i] > t[st.top()])
@@ -19,7 +21,7 @@ public:
         return ans;
 
         // tried but not working
-        
+
         // vector<int> ans;
         // int i, j, res = 0;
         // for(i=0;i<temperatures.size()-1;i++){
