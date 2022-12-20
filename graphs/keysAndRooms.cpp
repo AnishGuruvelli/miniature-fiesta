@@ -6,11 +6,11 @@ public:
     bool canVisitAllRooms(vector<vector<int>> &rooms)
     {
         vector<bool> visited(rooms.size(), false);
-        
+
         queue<int> q;
-        q.push(0); 
+        q.push(0);
         // Start from room 0.
-        
+
         while (!q.empty())
         {
             int size = q.size();
