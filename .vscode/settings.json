@@ -17,6 +17,7 @@
         "array": "cpp",
         "string_view": "cpp",
         "__bit_reference": "cpp",
-        "initializer_list": "cpp"
+        "initializer_list": "cpp",
+        "ios": "cpp"
     }
 }
