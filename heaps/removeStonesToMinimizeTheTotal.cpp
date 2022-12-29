@@ -10,12 +10,12 @@ public:
 
         while (k > 0)
         {
-            int a = pq.top();
-            // cout << a << endl;
+            int topEle = pq.top();
+            // cout << topEle << endl;
             pq.pop();
-            a -= floor(a / 2);
-            // cout << a << endl;
-            pq.push(a);
+            topEle -= floor(topEle / 2);
+            // cout << topEle << endl;
+            pq.push(topEle);
             k--;
         }
 
