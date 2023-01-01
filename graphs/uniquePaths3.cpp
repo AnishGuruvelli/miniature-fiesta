@@ -1,4 +1,3 @@
-
 class Solution
 {
     int M, N, eCount = 1, res = 0;
