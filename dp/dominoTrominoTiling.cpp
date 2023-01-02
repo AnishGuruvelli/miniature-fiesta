@@ -1,30 +1,20 @@
-// https://leetcode.com/problems/domino-and-tromino-tiling/solutions/393645/concise-dp-solution-o-n-time-o-1-space-picture-illustration-no-lengthy-math-derivation/
+// https://www.youtube.com/watch?v=20dbrEfB8-A
 
 class Solution
 {
 public:
     int numTilings(int n)
     {
-        if (n == 1)
-            return 1;
-
-        // initial values
-        long a, a_pre1 = 1, a_pre2 = 1; // 2xn solution
-        long b, b_pre1 = 1, b_pre2 = 0; // 2xn+1 solution
-        const long mod = 1000000007;
-
-        while (--n >= 1) // iterate n-1 times
+        vector<long long> dp(n + 5, 0);
+        long long mod = 1000000007;
+        dp[1] = 1;
+        dp[2] = 2;
+        dp[3] = 5;
+        for (int i = 4; i <= n; i++)
         {
-            a = (a_pre1 + a_pre2 + 2 * b_pre2) % mod;
-            b = (a_pre1 + b_pre1) % mod;
-
-            // update a and b
-            a_pre2 = a_pre1;
-            a_pre1 = a;
-
-            b_pre2 = b_pre1;
-            b_pre1 = b;
+            dp[i] = 2 * dp[i - 1] + dp[i - 3];
+            dp[i] %= mod;
         }
-        return a;
+        return dp[n];
     }
 };
