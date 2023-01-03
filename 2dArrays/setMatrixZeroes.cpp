@@ -5,7 +5,7 @@ public:
     {
         int rows = matrix.size();
         int cols = matrix[0].size();
-        int xyz = INT_MAX-1;
+        int xyz = INT_MAX - 1;
 
         for (int i = 0; i < rows; i++)
         {
