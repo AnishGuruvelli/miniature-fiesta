@@ -31,8 +31,13 @@ public:
     int maxProfit(vector<int> &prices)
     {
         int n = prices.size();
+        
         int capacity = 2;
+        
         vector<vector<vector<int>>> dp(n, vector<vector<int>>(2, vector<int>(3, -1)));
+        // very important, it should be 3 over here, because no of transactions can be either 0, 1 or 2; for a total of 2 transactions.
+
+
         return helper(prices, n, 0, 1, capacity, dp);
     }
 };
