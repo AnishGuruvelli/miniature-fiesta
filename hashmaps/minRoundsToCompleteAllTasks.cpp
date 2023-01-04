@@ -5,9 +5,7 @@ public:
     {
         unordered_map<int, int> mp;
         for (int i = 0; i < tasks.size(); i++)
-        {
             mp[tasks[i]]++;
-        }
 
         int output = 0;
 
@@ -15,14 +13,12 @@ public:
         {
             if (freq.second == 1)
                 return -1;
+
             if (freq.second % 3 == 0)
-            {
                 output += freq.second / 3;
-            }
+
             else
-            {
                 output += freq.second / 3 + 1;
-            }
         }
         return output;
     }
