@@ -19,7 +19,13 @@ public:
         for (int i = 0; i < tokens.size(); i++)
         {
             // it is an operator
+            // tokens[i].size() == 1 : this step is there to take in only operations,
+            // as + - * / are also counted as 1 length, so if its -11, then size is
+            // counted as 2, so it will go into else
+
             if (tokens[i].size() == 1 && tokens[i][0] < 48)
+            // ascii values of signs and all :
+            // https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html
             {
                 long integer2 = s.top();
                 s.pop();

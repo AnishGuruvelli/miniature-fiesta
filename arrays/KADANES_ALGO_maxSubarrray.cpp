@@ -34,8 +34,7 @@ public:
 // for i in range(0, len(arr)):
 //     sum=0
 //     for j in range(i, len(arr)):
-//     sum += arr[j]
-//     maximum = max(sum, maximum) #compare the resulting sum with the existing maximum value
+//     #compare the resulting sum with the existing maximum value
 // return maximum
 
 // SECOND APPROACH: DIVIDE AND CONQUER  : O (NLOGN)

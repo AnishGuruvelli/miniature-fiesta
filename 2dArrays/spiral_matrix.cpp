@@ -6,17 +6,18 @@ public:
     vector<int> spiralOrder(vector<vector<int>> &matrix)
     {
         vector<int> ans;
+
         int m = matrix.size();
         int n = matrix[0].size();
-        if (m == 0)
+
+        if (m == 0 || n == 0)
             return ans;
-        if (n == 0)
-            return ans;
+        
         int i, sr = 0, er = m - 1, ec = n - 1, sc = 0;
         int count = 0;
+        
         while (sr <= er && sc <= ec)
         {
-
             /// print sr
             for (i = sc; i <= ec; i++)
             {
