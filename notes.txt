@@ -15,6 +15,15 @@ remove duplicates in vector:
 nums.erase(unique(nums.begin(), nums.end()), nums.end());
 
 
+// vector<vector<int>> &points
+sort(points.begin(), points.end(), comp);
+ => static bool comp(vector<int> &a, vector<int> &b)
+    {
+        return a[1] < b[1];
+        // sorting the ending elements 
+    }
+
+
 int rightSum = accumulate(nums.begin(), nums.end(), 0);
 // sums up all the elements in the array/vector
 partial_sum(nums.begin(), nums.end(), 0);
