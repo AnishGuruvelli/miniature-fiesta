@@ -1,4 +1,25 @@
-// SETS ARE USED FOR FREQUENCY ONLY, STROING AS THEY TAKE ONLY ONE INPUT: unordered_set<int> s; thats it just one int, and we can directly insert too which we cant do in hashmaps
+// class Solution
+// {
+// public:
+//     bool uniqueOccurrences(vector<int> &arr)
+//     {
+//         unordered_map<int, int> m;
+//         unordered_map<int, int> n;
+        
+//         for (auto it : arr)
+//             m[it]++;
+
+//         for (auto it : m){
+//             n[it.second]++;
+//             cout<<it.first<<" -> "<<it.second<<endl;
+//             }
+
+//         if (m.size() == n.size())
+//             return true;
+//         else
+//             return false;
+//     }
+// };
 
 class Solution
 {
@@ -15,9 +36,7 @@ public:
         // store the frequency of each element into map
 
         for (int i = 0; i < n; i++)
-        {
             mp[arr[i]]++;
-        }
 
         // declare a set
 
@@ -30,40 +49,51 @@ public:
             // if duplicate frequency found
 
             if (s.count(x.second))
-            {
                 return false;
-            }
 
             // insert the frequency into set
 
             s.insert(x.second);
         }
-
         return true;
     }
 };
 
-// HASHMAP WAY OF DOING IT
+// GREAT SOLUTION USING ARRAYS TOO: BRUTE FORCE
 
 // class Solution
 // {
 // public:
 //     bool uniqueOccurrences(vector<int> &arr)
 //     {
-//         unordered_map<int, int> m;
-//         unordered_map<int, int> n;
-//         for (auto it : arr)
+//         vector<int> ans;
+//         int size = arr.size();
+//         int i = 0;
+        
+//         sort(arr.begin(), arr.end());
+
+//         while (i < size)
 //         {
-//             m[it]++;
+//             int count = 1;
+//             for (int j = i + 1; j < size; j++)
+//             {
+//                 if (arr[i] == arr[j])
+//                     count++;
+//                 else
+//                     break;
+//             }
+//             ans.push_back(count);
+//             i = i + count;
 //         }
-//         for (auto it : m)
+//         size = ans.size();
+        
+//         sort(ans.begin(), ans.end());
+        
+//         for (int i = 0; i < size - 1; i++)
 //         {
-//             n[it.second]++;
+//             if (ans[i] == ans[i + 1])
+//                 return false;
 //         }
-//         if (m.size() == n.size())
-//             return true;
-//         else
-//             return false;
+//         return true;
 //     }
 // };
-

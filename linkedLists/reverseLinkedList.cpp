@@ -14,6 +14,7 @@ public:
     ListNode *reverseList(ListNode *head)
     {
         ListNode *nextNode, *prevNode = NULL;
+        
         if (!head || !head->next)
             return head;
 
@@ -24,6 +25,7 @@ public:
             prevNode = head;
             head = nextNode;
         }
+
         return prevNode;
     }
 };
