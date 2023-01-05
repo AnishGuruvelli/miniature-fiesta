@@ -24,6 +24,10 @@ sort(points.begin(), points.end(), comp);
     }
 
 
+if(target == -294967296) return {};
+// this is how you return an empty vector
+
+
 int rightSum = accumulate(nums.begin(), nums.end(), 0);
 // sums up all the elements in the array/vector
 partial_sum(nums.begin(), nums.end(), 0);
