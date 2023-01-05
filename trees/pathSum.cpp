@@ -17,16 +17,16 @@ public:
     {
         if (!root)
             return false;
+
         if (sum == root->val && !root->left && !root->right)
             return true;
+
         sum -= root->val;
         if (hasPathSum(root->left, sum))
             return true;
-        else
-        {
-            if (hasPathSum(root->right, sum))
-                return true;
-        }
+        if (hasPathSum(root->right, sum))
+            return true;
+
         return false;
     }
 };
