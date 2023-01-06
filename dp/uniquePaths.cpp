@@ -1,5 +1,3 @@
-// https://www.youtube.com/watch?v=t_f0nwwdg5o: watch it again for best appraoch: memory efficient
-
 class Solution
 {
 public:
@@ -7,15 +5,16 @@ public:
     {
         if (i == (n - 1) && j == (m - 1))
             return 1;
+
         if (i >= n || j >= m)
             return 0;
 
         if (dp[i][j] != -1)
             return dp[i][j];
 
-        else
-            return dp[i][j] = helper(i + 1, j, n, m, dp) + helper(i, j + 1, n, m, dp);
+        return dp[i][j] = helper(i + 1, j, n, m, dp) + helper(i, j + 1, n, m, dp);
     }
+    
     int uniquePaths(int m, int n)
     {
         vector<vector<int>> dp(n, vector<int>(m, -1));
