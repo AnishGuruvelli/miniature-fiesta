@@ -1,36 +1,31 @@
 class Solution
 {
 public:
-    int helper(vector<int> &prices, int index, int n, int buy, int noOfTransactions, vector<vector<int>> &dp)
+    int helper(vector<int> &prices, int index, int buy, int noOfTransactions, int n, vector<vector<int>> &dp)
     {
         if (index == n || noOfTransactions <= 0)
             return 0;
 
         if (dp[index][buy] != -1)
             return dp[index][buy];
-
-        int profit = 0;
-
+        
+        int maxP = 0;
+        
         if (buy)
-        {
-            profit = max(
-                (-prices[index] + helper(prices, index + 1, n, 0, noOfTransactions, dp)),
-                (0 + helper(prices, index + 1, n, 1, noOfTransactions, dp)));
-        }
+            maxP = max((-prices[index] + helper(prices, index + 1, 0, 1, n, dp)),
+                       (0 + helper(prices, index + 1, 1, 1, n, dp)));
+        
         else
-        {
-            profit = max(
-                (prices[index] + helper(prices, index + 1, n, 0, noOfTransactions - 1, dp)),
-                (0 + helper(prices, index + 1, n, 0, noOfTransactions, dp)));
-        }
+            maxP = max((prices[index] + helper(prices, index + 1, 1, 0, n, dp)),
+                       (0 + helper(prices, index + 1, 0, 1, n, dp)));
 
-        return dp[index][buy] = profit;
+        return dp[index][buy] = maxP;
     }
     int maxProfit(vector<int> &prices)
     {
         int n = prices.size();
         vector<vector<int>> dp(n, vector<int>(2, -1));
-        return helper(prices, 0, n, 1, 1, dp);
+        return helper(prices, 0, 1, 1, n, dp);
     }
 };
 
