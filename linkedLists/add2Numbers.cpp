@@ -8,7 +8,6 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-
 class Solution
 {
 public:
@@ -18,15 +17,15 @@ public:
         ListNode *curr = dummy;
         int carry = 0;
 
-        while (l1 != NULL || l2 != NULL || carry == 1)
+        while (l1 || l2 || carry == 1)
         {
             int sum = 0;
-            if (l1 != NULL)
+            if (l1)
             {
                 sum += l1->val;
                 l1 = l1->next;
             }
-            if (l2 != NULL)
+            if (l2)
             {
                 sum += l2->val;
                 l2 = l2->next;
@@ -40,5 +39,3 @@ public:
         return dummy->next;
     }
 };
-
-// carry = sum / 10;  ListNode *node = new ListNode(sum % 10);
