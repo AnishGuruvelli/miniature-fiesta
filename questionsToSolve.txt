@@ -1,3 +1,17 @@
+last 10:
+https://leetcode.com/problems/minimum-time-to-collect-all-apples-in-a-tree/description/
+https://leetcode.com/problems/number-of-nodes-in-the-sub-tree-with-the-same-label/submissions/
+https://leetcode.com/problems/most-frequent-number-following-key-in-an-array/description/
+https://leetcode.com/problems/maximum-number-of-non-overlapping-substrings/description/
+https://leetcode.com/problems/3sum/
+https://leetcode.com/problems/3sum-closest/description/
+https://leetcode.com/problems/3sum-closest/description/
+https://leetcode.com/problems/regular-expression-matching/description/
+https://leetcode.com/problems/word-ladder-ii/description/
+https://leetcode.com/problems/word-ladder-ii/description/
+https://leetcode.com/problems/n-queens-ii/description/
+
+
 ALL HARD : 
 
 https://leetcode.com/problems/word-ladder-ii/
@@ -17,7 +31,6 @@ https://leetcode.com/problems/unique-paths-ii/
 https://leetcode.com/problems/unique-paths-iii/
 
 https://leetcode.com/problems/distinct-subsequences/
-https://leetcode.com/problems/wildcard-matching/
 https://leetcode.com/problems/shortest-common-supersequence/
 
 
@@ -43,3 +56,4 @@ https://leetcode.com/problems/longest-subsequence-with-limited-sum/description/
 
 bit manipulation :
 https://leetcode.com/problems/sum-of-two-integers/description/
+https://leetcode.com/problems/divide-two-integers/description/
