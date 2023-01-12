@@ -1,6 +1,5 @@
 ALL HARD : 
 
-https://leetcode.com/problems/word-ladder/
 https://leetcode.com/problems/word-ladder-ii/
 https://leetcode.com/problems/word-break/
 https://leetcode.com/problems/word-break-ii/
@@ -41,3 +40,6 @@ https://leetcode.com/problems/jump-game/description/
 https://leetcode.com/problems/add-binary/description/
 https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/description/
 https://leetcode.com/problems/longest-subsequence-with-limited-sum/description/
+
+bit manipulation :
+https://leetcode.com/problems/sum-of-two-integers/description/

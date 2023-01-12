@@ -15,6 +15,9 @@ remove duplicates in vector:
 nums.erase(unique(nums.begin(), nums.end()), nums.end());
 
 
+int maxi = *max_element(nums.begin(), nums.end());
+
+
 // vector<vector<int>> &points
 sort(points.begin(), points.end(), comp);
  => static bool comp(vector<int> &a, vector<int> &b)
