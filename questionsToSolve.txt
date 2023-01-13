@@ -1,6 +1,9 @@
 last 10:
+
 https://leetcode.com/problems/minimum-time-to-collect-all-apples-in-a-tree/description/
 https://leetcode.com/problems/number-of-nodes-in-the-sub-tree-with-the-same-label/submissions/
+https://leetcode.com/problems/longest-path-with-different-adjacent-characters/description/
+
 https://leetcode.com/problems/most-frequent-number-following-key-in-an-array/description/
 https://leetcode.com/problems/maximum-number-of-non-overlapping-substrings/description/
 https://leetcode.com/problems/3sum/
