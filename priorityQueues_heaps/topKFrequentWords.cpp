@@ -44,7 +44,8 @@ public:
         {
             if (pq.size() < k)
                 pq.push({x.second, x.first});
-            else if (pq.top().first < x.second || (pq.top().first == x.second && pq.top().second > x.first))
+            else if (pq.top().first < x.second ||
+                     (pq.top().first == x.second && pq.top().second > x.first))
             {
                 pq.pop();
                 pq.push({x.second, x.first});
