@@ -1,3 +1,23 @@
+// class Solution
+// {
+// public:
+//     vector<string> topKFrequent(vector<string> &words, int k)
+//     {
+//         // but this will return ["the","the","the","the"] , instead of ["the","is","sunny","day"]
+//         priority_queue<string> pq(words.begin(), words.end());
+//         vector<string> ans;
+//         while (k > 0)
+//         {
+//             string x = pq.top();
+//             ans.push_back(x);
+//             pq.pop();
+//             k--;
+//         }
+//         sort(ans.begin(), ans.end());
+//         return ans;
+//     }
+// };
+
 class Solution
 {
 public:
@@ -24,12 +44,11 @@ public:
         {
             if (pq.size() < k)
                 pq.push({x.second, x.first});
-            else
-                if (pq.top().first < x.second || (pq.top().first == x.second && pq.top().second > x.first))
-                {
-                    pq.pop();
-                    pq.push({x.second, x.first});
-                }
+            else if (pq.top().first < x.second || (pq.top().first == x.second && pq.top().second > x.first))
+            {
+                pq.pop();
+                pq.push({x.second, x.first});
+            }
         }
         // push all the elements from pq to res
         vector<string> res;
