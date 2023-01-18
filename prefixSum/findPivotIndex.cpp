@@ -1,4 +1,5 @@
 // Time Complexity : O(n)
+
 class Solution
 {
 public:
@@ -6,10 +7,13 @@ public:
     {
         // Initialize rightSum to store the sum of all the numbers strictly to the index's right
         int rightSum = accumulate(nums.begin(), nums.end(), 0);
-        
+        // accumulate(first, last, sum) ,i.e sum : initial value of the sum
+        cout << rightSum << endl;
+        // [1,7,3,6,5,6] // 28
+
         // Initialize leftSum to store the sum of all the numbers strictly to the index's left
         int leftSum = 0;
-        
+
         for (int i = 0; i < nums.size(); i++)
         {
             rightSum -= nums[i];
@@ -19,11 +23,16 @@ public:
 
             leftSum += nums[i];
         }
-        
+
         return -1;
     }
 };
 
+// right sum: 28 27 20 17 11 6 0
+// left sum:  0 1 8 11 17 22 28
+
+// right sum: 6 5 3 0
+// left sum:  0 1 3 6
 
 // wasnt working for some reason
 
