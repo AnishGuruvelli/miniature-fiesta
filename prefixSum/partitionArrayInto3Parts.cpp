@@ -22,19 +22,19 @@ public:
     }
 };
 
-bool canThreePartsEqualSum(vector<int> &A, int parts = 0)
-{
-    auto total = accumulate(begin(A), end(A), 0);
+// bool canThreePartsEqualSum(vector<int> &A, int parts = 0)
+// {
+//     auto total = accumulate(begin(A), end(A), 0);
 
-    if (total % 3 != 0)
-        return false;
+//     if (total % 3 != 0)
+//         return false;
 
-    for (auto i = 0, sum = 0; i < A.size(); ++i)
-    {
-        sum += A[i];
-        if (sum == (parts + 1) * total / 3)
-            ++parts;
-    }
+//     for (auto i = 0, sum = 0; i < A.size(); ++i)
+//     {
+//         sum += A[i];
+//         if (sum == (parts + 1) * total / 3)
+//             ++parts;
+//     }
 
-    return parts >= 3;
-}
+//     return parts >= 3;
+// }
