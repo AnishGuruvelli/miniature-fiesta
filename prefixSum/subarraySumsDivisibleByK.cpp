@@ -42,6 +42,8 @@ public:
         {
             currentSum += x;
             int mod = (currentSum % k + k) % k;
+            // https://leetcode.com/problems/subarray-sums-divisible-by-k/solutions/3070599/day-19-explanation-with-diagram-prefix-sum-and-hashmap-o-n-time-and-o-n-space/
+            // abt why u have to do mod twice
 
             // check if mod already present
             if (mp.find(mod) != mp.end())

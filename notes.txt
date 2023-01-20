@@ -11,8 +11,9 @@ int n2 = stoi(num2);
 to lowercase:
 s[i] = tolower(s[i]);
 
-remove duplicates in vector:         
+// remove duplicates in vector:
 nums.erase(unique(nums.begin(), nums.end()), nums.end());
+return nums;    
 
 
 int maxi = *max_element(nums.begin(), nums.end());
