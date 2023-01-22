@@ -1,13 +1,40 @@
+// class Solution {
+// public:
+//     bool isPalindrome(string st){
+//         int n = st.size();
+//         int start =0, end=n-1;
+//         while (start <= end)
+//             if (st[start++] != st[end--])
+//                 return false;
+
+//         return true;
+//     }
+//     vector<vector<string>> partition(string s) {
+//         vector<vector<string>> ans;
+//         int n = s.size();
+//         for(int i=0;i<n;i++){
+//             vector<string> res;
+//             for(int j=i;j<n;j++){
+//                 string st = s.substr(i, j);
+//                 if(isPalindrome(st)){
+//                     res.push_back(st);
+//                 }
+//             }
+//             ans.push_back(res);
+//         }
+//         return ans;
+//     }
+// };
+
 class Solution
 {
 public:
     bool isPalindrome(string &s, int start, int end)
     {
         while (start <= end)
-        {
             if (s[start++] != s[end--])
                 return false;
-        }
+
         return true;
     }
 
@@ -18,7 +45,7 @@ public:
             res.push_back(path);
             return;
         }
-        for (int i = index; i < s.size(); ++i)
+        for (int i = index; i < s.size(); i++)
         {
             if (isPalindrome(s, index, i))
             {

@@ -19,6 +19,10 @@ return nums;
 int maxi = *max_element(nums.begin(), nums.end());
 
 
+int idx = upper_bound(v.begin(), v.end(), x) - v.begin();
+// https://leetcode.com/problems/longest-subsequence-with-limited-sum/description/
+
+
 // vector<vector<int>> &points
 sort(points.begin(), points.end(), comp);
  => static bool comp(vector<int> &a, vector<int> &b)
