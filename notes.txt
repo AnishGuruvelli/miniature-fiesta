@@ -55,6 +55,24 @@ how to erase unique elements:
 sort(begin(ans),end(ans));
 ans.erase(unique(begin(ans), end(ans)),end(ans));
 
+
+https://leetcode.com/problems/snakes-and-ladders/description/
+
+finding coordinates in snakes and ladders:
+
+vector<int> findCoordinates(int currVal, int n)
+    {
+        // calculates the row by subtracting the quotient of (curr-1) / n from n-1. This is done to convert the 1-indexed position of the element to a 0-indexed position in the board.
+        int row = n - (currVal - 1) / n - 1;
+        int col = (currVal - 1) % n;
+        if (row % 2 == n % 2)
+            return {row, n - 1 - col};
+        else
+            return {row, col};
+    }
+
+
+
 To, find out a sliding window problem :-
 > First thing is, we have given something like an "Array" | OR | "String"
 > Second thing is, they are talking about either "subsequence" | OR | "substring"
