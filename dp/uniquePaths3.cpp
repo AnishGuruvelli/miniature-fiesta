@@ -1,6 +1,6 @@
 class Solution
 {
-    int M, N, eCount = 1, res = 0;
+    int M, N, zCount = 1, res = 0;
 
 public:
     int uniquePathsIII(vector<vector<int>> &grid)
@@ -13,7 +13,7 @@ public:
                 if (grid[i][j] == 1)
                     x = i, y = j;
                 else if (grid[i][j] == 0)
-                    eCount++;
+                    zCount++;
             }
 
         DFS(grid, x, y, 0);
@@ -27,7 +27,7 @@ public:
 
         if (g[i][j] == 2)
         {
-            if (count == eCount)
+            if (count == zCount)
                 res++;
             return;
         }

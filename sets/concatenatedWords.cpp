@@ -19,6 +19,7 @@ public:
             {
                 if (!dp[i])
                     continue;
+
                 for (int j = i + 1; j <= n; j++)
                     if (j - i < n && words_set.count(word.substr(i, j - i)))
                         dp[j] = 1;
