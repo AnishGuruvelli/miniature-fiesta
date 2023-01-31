@@ -25,6 +25,5 @@ public:
             }
         }
         return to_string(A) + "A" + to_string(B) + "B";
-        ;
     }
 };
