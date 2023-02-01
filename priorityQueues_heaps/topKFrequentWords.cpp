@@ -61,9 +61,7 @@ public:
         unordered_map<string, int> mp;
 
         for (string &word : words)
-        {
             mp[word]++;
-        }
 
         for (auto &it : mp)
         {
