@@ -128,3 +128,19 @@ return ans;
             }
         }
     };
+
+##########
+
+typedef pair<string, int> P;
+
+    struct lambda
+    {
+        bool operator()(P &a, P &b)
+        {
+            return a.second > b.second || (a.second == b.second && a.first < b.first);
+        }
+    };
+
+    vector<string> topKFrequent(vector<string> &words, int k)
+    {
+        priority_queue<P, vector<P>, lambda> pq;

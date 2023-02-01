@@ -1,67 +1,135 @@
+
+// // Approach-1 (Time : O(nlogn), Space : O(n))
 // class Solution
 // {
 // public:
 //     vector<string> topKFrequent(vector<string> &words, int k)
 //     {
-//         // but this will return ["the","the","the","the"] , instead of ["the","is","sunny","day"]
-//         priority_queue<string> pq(words.begin(), words.end());
-//         vector<string> ans;
-//         while (k > 0)
+//         vector<pair<int, string>> vp;
+//         unordered_map<string, int> mp;
+
+//         for (string &word : words)
 //         {
-//             string x = pq.top();
-//             ans.push_back(x);
-//             pq.pop();
-//             k--;
+//             mp[word]++;
 //         }
-//         sort(ans.begin(), ans.end());
-//         return ans;
+
+//         for (auto &it : mp)
+//         {
+//             vp.push_back({it.second, it.first});
+//         }
+
+//         auto lambda = [](pair<int, string> &p1, pair<int, string> &p2)
+//         {
+//             if (p1.first == p2.first)
+//                 return p1.second < p2.second;
+
+//             return p1.first > p2.first;
+//         };
+
+//         sort(begin(vp), end(vp), lambda);
+
+//         int i = 0;
+//         vector<string> result(k);
+//         while (i < k)
+//         {
+//             result[i] = vp[i].second;
+//             i++;
+//         }
+
+//         return result;
 //     }
 // };
 
+// Approach-2 (Using Heap - Time : O(nlogk), Space : O(n))
 class Solution
 {
 public:
-    struct comparator
+    typedef pair<string, int> P;
+
+    struct lambda
     {
-        bool operator()(pair<int, string> &a, pair<int, string> &b)
+        bool operator()(P &a, P &b)
         {
-            if (a.first == b.first)
-                // if frequency are equal put lexicographically greater element on top
-                return a.second < b.second;
-            else
-                // if frequency are not equal put the elements on top which has less frequency
-                return a.first > b.first;
+            return a.second > b.second || (a.second == b.second && a.first < b.first);
         }
     };
+
     vector<string> topKFrequent(vector<string> &words, int k)
     {
-        int n = words.size();
+        priority_queue<P, vector<P>, lambda> pq;
+
         unordered_map<string, int> mp;
-        for (auto word : words)
-            mp[word]++;
-        priority_queue<pair<int, string>, vector<pair<int, string>>, comparator> pq;
-        for (auto x : mp)
+
+        for (string &word : words)
         {
-            if (pq.size() < k)
-                pq.push({x.second, x.first});
-            else if (pq.top().first < x.second ||
-                     (pq.top().first == x.second && pq.top().second > x.first))
-            {
-                pq.pop();
-                pq.push({x.second, x.first});
-            }
+            mp[word]++;
         }
-        // push all the elements from pq to res
-        vector<string> res;
+
+        for (auto &it : mp)
+        {
+            pq.push({it.first, it.second});
+
+            if (pq.size() > k)
+                pq.pop();
+        }
+
+        int i = k - 1;
+        vector<string> result(k);
         while (!pq.empty())
         {
-            res.push_back(pq.top().second);
+            result[i] = pq.top().first;
             pq.pop();
+            i--;
         }
-        reverse(res.begin(), res.end());
-        return res;
+
+        return result;
     }
 };
+
+// class Solution
+// {
+// public:
+//     struct comparator
+//     {
+//         bool operator()(pair<int, string> &a, pair<int, string> &b)
+//         {
+//             if (a.first == b.first)
+//                 // if frequency are equal put lexicographically greater element on top
+//                 return a.second < b.second;
+//             else
+//                 // if frequency are not equal put the elements on top which has less frequency
+//                 return a.first > b.first;
+//         }
+//     };
+//     vector<string> topKFrequent(vector<string> &words, int k)
+//     {
+//         int n = words.size();
+//         unordered_map<string, int> mp;
+//         for (auto word : words)
+//             mp[word]++;
+//         priority_queue<pair<int, string>, vector<pair<int, string>>, comparator> pq;
+//         for (auto x : mp)
+//         {
+//             if (pq.size() < k)
+//                 pq.push({x.second, x.first});
+//             else if (pq.top().first < x.second ||
+//                      (pq.top().first == x.second && pq.top().second > x.first))
+//             {
+//                 pq.pop();
+//                 pq.push({x.second, x.first});
+//             }
+//         }
+//         // push all the elements from pq to res
+//         vector<string> res;
+//         while (!pq.empty())
+//         {
+//             res.push_back(pq.top().second);
+//             pq.pop();
+//         }
+//         reverse(res.begin(), res.end());
+//         return res;
+//     }
+// };
 
 // But this solution fails, because of the defining of the min heap, something went wrong: which is why we dont generally use  greater<pair<int, stri; instead we make use of a seperate operator
 // class Solution
