@@ -14,6 +14,11 @@ s[i] = tolower(s[i]);
 // remove duplicates in vector:
 nums.erase(unique(nums.begin(), nums.end()), nums.end());
 return nums;    
+// /*
+        Duplicates: The line ans.erase(unique(ans.begin(), ans.end()), ans.end()); tries to remove duplicates from the answer vector, but the unique function only removes adjacent duplicates, not all duplicates.
+        To remove duplicates from a vector in C++, you can use the std::set container. The set container stores only unique elements and automatically removes duplicates. Here's an example of how you could use a set in the given code:
+        */
+// word search 2 question 
 
 
 int maxi = *max_element(nums.begin(), nums.end());
