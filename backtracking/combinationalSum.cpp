@@ -8,9 +8,7 @@ public:
         if (index == arr.size())
         {
             if (target == 0)
-            {
                 return ans.push_back(ds);
-            }
             return;
         }
 
