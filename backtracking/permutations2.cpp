@@ -6,9 +6,7 @@ public:
     void permutations(vector<int> &nums, int n, int i)
     {
         if (n == i)
-        {
             ans.push_back(nums);
-        }
 
         for (int j = i; j < n; j++)
         {
