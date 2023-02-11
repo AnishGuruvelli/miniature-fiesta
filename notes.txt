@@ -8,6 +8,8 @@ string to something else:
 long n1 = stol(num1);
 int n2 = stoi(num2);
 
+SPECIAL CHARACTERS : ASCII VALUES  : 33 TO 47 : BOTH INCLUSIVE
+
 to lowercase:
 s[i] = tolower(s[i]);
 
