@@ -1,3 +1,5 @@
+// EK DUM PHODU CONCEPT : IN CASE UK GRAPHS / BFS , FULLY THEN TRY THIS 
+
 // https://leetcode.com/problems/as-far-from-land-as-possible/solutions/3166427/c-bfs-s-easy-to-understand-clean-and-faster/
 
 class Solution
@@ -24,6 +26,8 @@ public:
         dir.push_back({1, 0});
         dir.push_back({0, -1});
         dir.push_back({-1, 0});
+
+        // dir.push_back({0,1},{1,0},{0,-1},{-1,0}); : this is wrong
 
         while (!q.empty())
         {
