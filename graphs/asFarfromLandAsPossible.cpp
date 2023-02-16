@@ -1,4 +1,4 @@
-// EK DUM PHODU CONCEPT : IN CASE UK GRAPHS / BFS , FULLY THEN TRY THIS 
+// EK DUM PHODU CONCEPT : IN CASE UK GRAPHS / BFS , FULLY THEN TRY THIS
 
 // https://leetcode.com/problems/as-far-from-land-as-possible/solutions/3166427/c-bfs-s-easy-to-understand-clean-and-faster/
 
@@ -19,7 +19,7 @@ public:
         if (q.size() == 0 or q.size() == n * m)
             return -1;
 
-        int lvl = -1;
+        int level = -1;
 
         vector<vector<int>> dir;
         dir.push_back({0, 1});
@@ -31,7 +31,7 @@ public:
 
         while (!q.empty())
         {
-            lvl++;
+            level++;
             int sz = q.size();
             for (int i = 0; i < sz; i++)
             {
@@ -50,6 +50,6 @@ public:
                 }
             }
         }
-        return lvl;
+        return level;
     }
 };

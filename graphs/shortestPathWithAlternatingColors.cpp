@@ -5,7 +5,7 @@ class Solution
 public:
     vector<int> shortestAlternatingPaths(int n, vector<vector<int>> &redEdges, vector<vector<int>> &blueEdges)
     {
-        vector<vector<pair<int, int>>> adj(n);
+        vector<vector<pair<int, int>>> adj(n); // neighbour color : line31
 
         for (auto &it : redEdges)
             adj[it[0]].push_back({it[1], 0});
@@ -14,7 +14,7 @@ public:
             adj[it[0]].push_back({it[1], 1});
 
         vector<int> ans(n, -1);
-        vector<vector<bool>> visited(n, vector<bool>(2));
+        vector<vector<bool>> visited(n, vector<bool>(2, false));
         queue<vector<int>> q;
 
         q.push({0, 0, -1}); // node steps color
