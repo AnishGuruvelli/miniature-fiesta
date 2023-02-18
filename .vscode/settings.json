@@ -32,6 +32,9 @@
         "queue": "cpp",
         "regex": "cpp",
         "stack": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "__string": "cpp",
+        "future": "cpp",
+        "forward_list": "cpp"
     }
 }
