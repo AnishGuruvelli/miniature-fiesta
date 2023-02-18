@@ -58,3 +58,66 @@ public:
         return ans;
     }
 };
+
+class Solution
+{
+public:
+    int minMaxDifference(int no)
+    {
+        string str = to_string(no);
+        int maxi = no, mini = no;
+
+        for (char i = '0'; i <= '9'; ++i)
+        {
+            for (char j = '0'; j <= '9'; ++j)
+            {
+                if (i == j)
+                    continue;
+
+                // Replace all occurrences of digit i with j
+                replace(str.begin(), str.end(), i, j);
+                int new_no = stoi(str);
+
+                // Update max and min values
+                if (new_no > maxi)
+                    maxi = new_no;
+                if (new_no < mini)
+                    mini = new_no;
+
+                // Reset str to the original value
+                str = to_string(no);
+            }
+        }
+
+        return maxi - mini;
+    }
+};
+
+class Solution
+{
+public:
+    int minImpossibleOR(vector<int> &nums)
+    {
+        const int MAX_NUM = 1 << 20; // 2^20, the maximum possible value of OR over a subsequence of nums
+        vector<bool> dp(MAX_NUM, false);
+        dp[0] = true; // base case
+        for (int x : nums)
+        {
+            for (int i = MAX_NUM - 1; i >= 0; i--)
+            {
+                if (dp[i])
+                {
+                    dp[i | x] = true;
+                }
+            }
+        }
+        for (int i = 1; i < MAX_NUM; i++)
+        {
+            if (!dp[i])
+            {
+                return i;
+            }
+        }
+        return MAX_NUM;
+    }
+};
