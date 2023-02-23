@@ -31,17 +31,18 @@ public:
         for (int i = 0; i < n; i++)
             players.push_back({ages[i], scores[i]});
         sort(players.begin(), players.end());
-        // BY DEFAULT, IT WILL SORT ACCORDING TO THE FIRST PARAMETER IN THE PAID IN VECTORS
+        // BY DEFAULT, IT WILL SORT ACCORDING TO THE FIRST PARAMETER IN THE PAIR IN VECTORS
         // sort(players.begin(), players.end(), sortbyfirst);
+
+        // third test case
+        // 5 1 2 3
 
         for (int i = 0; i < n; i++)
         {
             dp[i] = players[i].second;
             for (int j = 0; j < i; j++)
-            {
                 if (players[j].second <= players[i].second)
                     dp[i] = max(dp[i], dp[j] + players[i].second);
-            }
             ans = max(ans, dp[i]);
         }
         return ans;
